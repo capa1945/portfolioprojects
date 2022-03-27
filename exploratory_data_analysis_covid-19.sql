@@ -95,7 +95,8 @@ WHERE continent IS NOT NULL
 GROUP BY name;
 
 -- Mortality rate and probability of dying by country, Mar 19, 2022
--- For example, as of Mar 19, 2022, 211814 people are reported to have died due to COVID-19 out of a total population of 3339415 in Peru. This correspond to a 0.63% mortality rate to date, or 1 death very 157 people.
+-- For example, as of Mar 19, 2022, 211814 people are reported to have died due to COVID-19 out of a total population of 3339415 in Peru. 
+-- This correspond to a 0.63% mortality rate to date, or 1 death very 157 people.
 
 SELECT 
     name, population, MAX(total_deaths) total_deaths,
