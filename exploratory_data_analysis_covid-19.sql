@@ -1,4 +1,4 @@
--- create a table named covid_death that includes 8 fields: iso_code, date, total_cases, new_cases, total_deaths, new_deaths, icu_patients and hosp_patients:
+-- Create a table named covid_death that includes 8 fields: iso_code, date, total_cases, new_cases, total_deaths, new_deaths, icu_patients and hosp_patients:
 
 CREATE TABLE `portfolio_project`.`covid_death` (
     `iso_code` VARCHAR(10) NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE `portfolio_project`.`covid_death` (
     PRIMARY KEY (`iso_code` , `date`)
 );
 
--- create a table named geo_info that includes 4 fields: iso_code, continent, name, population
+-- Create a table named geo_info that includes 4 fields: iso_code, continent, name, population
 
 CREATE TABLE `portfolio_project`.`geo_info` (
     `iso_code` VARCHAR(10) NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE `portfolio_project`.`geo_info` (
     PRIMARY KEY (`iso_code`)
 );
 
--- create a table named covid_vaccination that includes 8 fields: iso_code, date, people_vaccinated, people_fully_vaccinated, total_boosters, new_vaccinations, new_vaccinations_smoothed, people_vaccinated_smoothed
+-- Create a table named covid_vaccination that includes 8 fields: iso_code, date, people_vaccinated, people_fully_vaccinated, total_boosters, new_vaccinations, new_vaccinations_smoothed, people_vaccinated_smoothed
 
 CREATE TABLE `portfolio_project`.`covid_vaccination` (
   `iso_code` varchar(10) NOT NULL,
