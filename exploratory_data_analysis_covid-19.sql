@@ -129,25 +129,20 @@ WHERE
 -- Note that this is counted as a single dose, and may not equal to the total number of people vaccinated
 
 SELECT 
-    name, 
-	year, 
-    month, 
+    name, year, month, 
     ROUND((monthly_new_vaccinations / population) * 100, 2) monthly_rate
 FROM 
-	(SELECT 
-         name, 
-         year, 
-         month, 
-         population, 
+    (SELECT 
+	 name, year, month, population，
          SUM(new_vaccinations) OVER(PARTITION BY year, month) AS monthly_new_vaccinations
-	   FROM
-	     (SELECT 
-              iso_code, 
-              name, 
-              YEAR(date) AS year, 
-              MONTH(date) AS month, 
-              population, 
-              new_vaccinations
-			FROM covid_vaccination INNER JOIN geo_info USING(iso_code)
-	       WHERE iso_code = 'NZL') temp1
-     ORDER BY year, month) temp2;
+     FROM
+         (SELECT 
+	      iso_code, name, 
+	      YEAR(date) AS year, 
+	      MONTH(date) AS month, 
+	      population, new_vaccinations
+	  FROM covid_vaccination 
+		INNER JOIN 
+             geo_info USING(iso_code)
+	  WHERE iso_code = 'NZL') temp1
+      ORDER BY year, month) temp2;
