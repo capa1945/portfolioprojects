@@ -141,8 +141,9 @@ FROM
 	      YEAR(date) AS year, 
 	      MONTH(date) AS month, 
 	      population, new_vaccinations
-	  FROM covid_vaccination 
-		INNER JOIN 
-             geo_info USING(iso_code)
+	  FROM 
+	      covid_vaccination 
+		 INNER JOIN 
+              geo_info USING(iso_code)
 	  WHERE iso_code = 'NZL') temp1
       ORDER BY year, month) temp2;
